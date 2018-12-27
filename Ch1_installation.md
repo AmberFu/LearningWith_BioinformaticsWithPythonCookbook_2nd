@@ -5,7 +5,7 @@ Ref book: [Bioinformatics with Python Cookbook 2nd](https://github.com/PacktPubl
 ```
 # docker build -t bio https://raw.githubusercontent.com/PacktPublishing/Bioinformatics-with-Python-Cookbook-Second-Edition/master/docker/Dockerfile
 ```
-> I cannot successfully install by this command, so I take the Dockerfile as a reference and build image manually. 
+> I **cannot successfully install** by this command, so I take the Dockerfile as a reference and build image manually. 
 >
 
 **Manually install: check one-by-one and modify the Dockerfile as below!**
@@ -68,7 +68,7 @@ dependencies:
 (base) root@d1e764951f84:/# conda config --add channels conda-forge (多加一行！)
 (base) root@d1e764951f84:/# conda install --yes simuPOP
 (base) root@d1e764951f84:/# apt-get install -y r-bioc-biobase （須先安裝 R, 再安裝 rpy2）
-(base) root@d1e764951f84:/# pip install rpy2
+(base) root@d1e764951f84:/# pip install rpy2 （須先安裝 R, 再安裝 rpy2）
 (base) root@d1e764951f84:/# pip install seaborn
 (base) root@d1e764951f84:/# pip install pyvcf
 (base) root@d1e764951f84:/# pip install dendropy
@@ -80,8 +80,7 @@ dependencies:
 
 **Dockerfile: (Modified)**
 
-> [../Dockerfile](https://github.com/AmberFu/LearningWith_BioinformaticsWithPythonCookbook_2nd/blob/master/Dockerfile)
->
+```../Dockerfile``` [link](https://github.com/AmberFu/LearningWith_BioinformaticsWithPythonCookbook_2nd/blob/master/Dockerfile)
 
 **re-Built docker images:**
 
@@ -96,6 +95,7 @@ Successfully tagged bio:20181227
 REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
 bio                     20181227            e61f63f9c182        16 seconds ago      5.96GB
 ```
+
 **Push to my docker hub:**
 
 ```
@@ -113,16 +113,25 @@ https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 
 Login Succeeded
 
-// 3. 
+// 3. Push:
+# docker push spashleyfu/bioinformatics_python
 ```
-
 
 **Run bio container:**
-```
-# docker run -ti -p 9875:9875 -v YOUR_DIRECTORY:/data bio
 
 ```
-## 2. Installation:
+# docker run -ti -p 9875:9875 -v /home/pyfu/:/home/pyfu -v /media/pyfu/DATA/:/media/pyfu/DATA/ spashleyfu/bioinformatics_python
+[I 07:54:07.702 NotebookApp] Writing notebook server cookie secret to /root/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 07:54:07.915 NotebookApp] JupyterLab beta preview extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 07:54:07.915 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[C 07:54:07.919 NotebookApp] Running as root is not recommended. Use --allow-root to bypass.
+```
 
+**Open browser:**
+
+> Point your browser to `http://localhost:9875` and you should get the Jupyter environment.
+>
+
+
+Ref:
 [Bioconda](https://bioconda.github.io/)
-
