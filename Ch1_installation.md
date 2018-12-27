@@ -26,7 +26,6 @@ RUN apt-get install -y git wget build-essential unzip
 
 RUN apt-get clean
 
-
 RUN conda config --add channels bioconda
 RUN conda install --yes biopython=1.70
 RUN conda install --yes statsmodels pysam plink gffutils genepop trimal
@@ -43,7 +42,6 @@ RUN root/miniconda/bin/pip install networkx
 
 RUN pip install pygenomics
 
-
 EXPOSE 9875
 
 RUN git clone https://github.com/PacktPublishing/Bioinformatics-with-Python-Cookbook-Second-Edition.git
@@ -51,8 +49,6 @@ WORKDIR /PacktPublising/notebooks
 
 RUN echo setterm -foreground magenta >> /etc/bash.bashrc
 CMD jupyter-notebook --ip=0.0.0.0 --no-browser --port=9875
-
-
 ```
 
 ## 2. Installation:
