@@ -87,7 +87,7 @@ dependencies:
 ```
 # docker build -t bio:20181227 ../Dockerfile
 ...
-Successfully built e61f63f9c182
+Successfully built 4b5b9b03f0d0
 Successfully tagged bio:20181227
 
 // check:
@@ -124,7 +124,8 @@ Login Succeeded
 [I 07:54:07.702 NotebookApp] Writing notebook server cookie secret to /root/.local/share/jupyter/runtime/notebook_cookie_secret
 [I 07:54:07.915 NotebookApp] JupyterLab beta preview extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
 [I 07:54:07.915 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
-[C 07:54:07.919 NotebookApp] Running as root is not recommended. Use --allow-root to bypass.
+[I 08:13:32.359 NotebookApp] Serving notebooks from local directory: /PacktPublising/notebooks
+...
 ```
 
 **Open browser:**
